@@ -46,10 +46,7 @@ int main(int argc, char **argv)
     qsort(array2, lines, sizeof(int), compare_ints);
 
     for (int i = 0; i < lines; i++)
-        array1[i] = abs(array1[i] - array2[i]);
-
-    for (int i = 0; i < lines; i++)
-        result += array1[i];
+        result += abs(array1[i] - array2[i]);
 
     printf("The result is %d\n", result);
 
