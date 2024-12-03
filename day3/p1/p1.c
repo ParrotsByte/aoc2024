@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     while (true) {
         if (fgets(buffer, sizeof(buffer), fp) == NULL)
             break;
-        fseek(fp, (long) -strlen(buffer) + 1, SEEK_CUR);
+        fseek(fp, (long) (-strlen(buffer) + 1), SEEK_CUR);
 
         if (regexec(&regex, buffer, 0, NULL, 0) == 0) {
             sscanf(buffer, "mul(%d,%d)", &a, &b);

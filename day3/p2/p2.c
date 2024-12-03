@@ -19,17 +19,11 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    if (regcomp(&regex_mul, "^mul\\([[:digit:]]{1,3},[[:digit:]]{1,3}\\).*", REG_EXTENDED) != 0) {
-        fprintf(stderr, "Error compiling regex.\n");
-        exit(EXIT_FAILURE);
-    }
-
-    if (regcomp(&regex_do, "^do\\(\\).*", REG_EXTENDED) != 0) {
-        fprintf(stderr, "Error compiling regex.\n");
-        exit(EXIT_FAILURE);
-    }
-
-    if (regcomp(&regex_do_not, "^don't\\(\\).*", REG_EXTENDED) != 0) {
+    if (regcomp(&regex_mul,
+                "^mul\\([[:digit:]]{1,3},[[:digit:]]{1,3}\\).*",
+                REG_EXTENDED) != 0 || 
+        regcomp(&regex_do, "^do\\(\\).*", REG_EXTENDED) != 0 ||
+        regcomp(&regex_do_not, "^don't\\(\\).*", REG_EXTENDED) != 0) {
         fprintf(stderr, "Error compiling regex.\n");
         exit(EXIT_FAILURE);
     }
