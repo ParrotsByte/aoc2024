@@ -85,5 +85,7 @@ int main(int argc, char **argv) {
 
     printf("The number of XMAS is: %d\n", count);
 
+    fclose(fp);
+
     return EXIT_SUCCESS;
 }
