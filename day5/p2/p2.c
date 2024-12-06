@@ -67,6 +67,8 @@ int main(int argc, char **argv) {
         valid_update = true;
     }
 
+    fclose(fp);
+
     printf("The result is %d\n", result);
 
     return EXIT_SUCCESS;
